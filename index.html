@@ -13,14 +13,22 @@
     <button id="about-button">About</button>
     <button id="tutorial-button">Tutorial</button>
     <div class="editor">
-      <textarea placeholder="Insert your text here..." id="text-area" rows="10" cols="50"></textarea>
+      <textarea
+        placeholder="Insert your text here..."
+        id="text-area"
+        rows="10"
+        cols="50"
+      ></textarea>
       <div class="toolbar">
         <button id="output-button">Output</button>
         <button id="clear-button">Clear</button>
         <button id="paste-button">Paste</button>
         <button id="copy-button">Copy</button>
-        <button id="download-button">Download Text</button>
-        <input id="filename" placeholder="Specify a filename..." />
+        <button id="download-button">Download Text as File</button>
+        <input
+          id="filename"
+          placeholder="Insert file name and file extension.."
+        />
       </div>
     </div>
     <div id="output" class="output">
@@ -28,27 +36,47 @@
     </div>
     <script src="script.js" type="text/javascript">
 
-    //   const textArea = document.getElementById("text-area");
-      
-    //   function downloadTextFile(){
-    //           //create or obtain the file's content
-    //           var content = textArea.value;
+      function downloadFile(filename, content) {
+          // It works on all HTML5 Ready browsers as it uses the download attribute of the <a> element:
+          const element = document.createElement('a');
 
-    //           //create a file and put the content, name and type
-    //           var file = new File(["\ufeff"+content], 'textFile.txt', {type: "text/plain:charset=UTF-8"});
+          //A blob is a data type that can store binary data
+          // "type" is a MIME type
+          // It can have a different value, based on a file you want to save
+          const blob = new Blob([content], { type: 'plain/text' });
 
-    //           //create a ObjectURL in order to download the created file
-    //           url = window.URL.createObjectURL(file);
+          //createObjectURL() static method creates a DOMString containing a URL representing the object given in the parameter.
+          const fileUrl = URL.createObjectURL(blob);
 
-    //           //create a hidden link and set the href and click it
-    //           var a = document.createElement("a");
-    //           a.style = "display: none";
-    //           a.href = url;
-    //           a.download = file.name;
-    //           a.click();
-    //           window.URL.revokeObjectURL(url);
-    //           document.body.removeChild(a);
-    //         }
+          //setAttribute() Sets the value of an attribute on the specified element.
+          element.setAttribute('href', fileUrl); //file location
+          element.setAttribute('download-button', filename); // file name
+          element.style.display = 'none';
+
+          //use appendChild() method to move an element from one element to another
+          document.body.appendChild(element);
+          element.click();
+
+          //The removeChild() method of the Node interface removes a child node from the DOM and returns the removed node
+          document.body.removeChild(element);
+        };
+
+        window.onload = () => {
+          document.getElementById('download-button').addEventListener('click', e => {
+
+            //The value of the file name input box
+            const filename = document.getElementById('filename').value;
+
+            //The value of what has been input in the textarea
+            const content = document.getElementById('text-area').value;
+
+            // The && (logical AND) operator indicates whether both operands are true.
+            // If both operands have nonzero values, the result has the value 1 . Otherwise, the result has the value 0.
+            if (filename && content) {
+              downloadFile(filename, content);
+            }
+          });
+        };
     </script>
   </body>
 </html>
