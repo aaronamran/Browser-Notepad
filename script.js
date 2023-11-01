@@ -24,7 +24,7 @@ copyButton.addEventListener("click", copyText); // Event listener for Copy butto
 // Function to display the about alert
 function displayAbout() {
   const message =
-    "Need to temporarily paste text somewhere but feel lazy to create a .txt file with random names and open it in Notepad? \n\n" +
+    "Need to temporarily paste text somewhere but feel lazy to create a .txt file with random names and open it in Windows Notepad? \n\n" +
     "This simple browser-based text editor solves that problem for you.\n\n" +
     "Please allow browser permissions and read the tutorial.";
   alert(message);
