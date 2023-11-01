@@ -47,6 +47,7 @@
               a.download = file.name;
               a.click();
               window.URL.revokeObjectURL(url);
+              document.body.removeChild(a);
             }
     </script>
   </body>

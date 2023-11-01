@@ -8,7 +8,7 @@ const aboutButton = document.getElementById("about-button"); // About button
 const tutorialButton = document.getElementById("tutorial-button"); // Tutorial button
 const pasteButton = document.getElementById("paste-button"); // Paste button
 const copyButton = document.getElementById("copy-button"); // Copy button
-const downloadTextButton = document.getElementById("download-text-button"); // New button
+// const downloadTextButton = document.getElementById("download-text-button"); // New button
 
 
 let darkModeEnabled = false; // Variable to track the dark mode state
@@ -23,7 +23,7 @@ outputButton.addEventListener("click", outputText);
 clearButton.addEventListener("click", clearText);
 pasteButton.addEventListener("click", pasteText); // Event listener for Paste button
 copyButton.addEventListener("click", copyText); // Event listener for Copy button
-downloadTextButton.addEventListener("click", downloadText); // Event listener for download button
+// downloadTextButton.addEventListener("click", downloadText); // Event listener for download button
 // downloadTextButton.addEventListener("click", function () {
 //     const text = textArea.value;
 //     downloadTextAsText("text_file.txt", text);
@@ -123,22 +123,22 @@ function copyText() {
 }
 
 // Function to download the text as a text file
-function downloadText(){  
-    //create a file and put the content, name and type
-    var file = new File(["\ufeff" + textArea.value], 'text_file.txt', {type:"text/plain:charset=UTF-8"});
+// function downloadText(){  
+//     //create a file and put the content, name and type
+//     var file = new File(["\ufeff" + textArea.value], 'text_file.txt', {type:"text/plain:charset=UTF-8"});
   
-    //create a ObjectURL in order to download the created file
-    url = window.URL.createObjectURL(file);
+//     //create a ObjectURL in order to download the created file
+//     url = window.URL.createObjectURL(file);
   
-    //create a hidden link and set the href and click it
-    var a = document.createElement("a");
-    a.style = "display: none";
-    a.href = url;
-    a.download = file.name;
-    a.click();
-    window.URL.revokeObjectURL(url);
-    document.body.removeChild(a);
-  } 
+//     //create a hidden link and set the href and click it
+//     var a = document.createElement("a");
+//     a.style = "display: none";
+//     a.href = url;
+//     a.download = file.name;
+//     a.click();
+//     window.URL.revokeObjectURL(url);
+//     document.body.removeChild(a);
+//   } 
 
 
 
