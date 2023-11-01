@@ -4,6 +4,7 @@ const outputButton = document.getElementById("output-button");
 const clearButton = document.getElementById("clear-button");
 const outputDiv = document.getElementById("output");
 const enableDarkMode = document.getElementById('enable-dark-mode'); // Dark mode toggle button
+const aboutButton = document.getElementById("about-button"); // About button
 const tutorialButton = document.getElementById("tutorial-button"); // Tutorial button
 const pasteButton = document.getElementById("paste-button"); // Paste button
 const copyButton = document.getElementById("copy-button"); // Copy button
@@ -15,6 +16,7 @@ let clipboardText = ""; // Variable to store copied text
 
 
 // Event listeners
+aboutButton.addEventListener("click", displayAbout);
 tutorialButton.addEventListener("click", displayTutorial); // Event listener for Tutorial button
 outputButton.addEventListener("click", outputText);
 clearButton.addEventListener("click", clearText);
@@ -25,6 +27,14 @@ downloadTextButton.addEventListener("click", downloadTextAsText); // Event liste
 //     const text = textArea.value;
 //     downloadTextAsText("text_file.txt", text);
 // });
+
+// Function to display the about alert
+function displayAbout() {
+    const message = "Need to temporarily paste text somewhere but feel lazy to create a .txt file with random names and open it in Notepad? \n\n" +
+        "This simple browser-based text editor solves that problem for you.";
+    alert(message);
+}
+
 
 // Function to display the tutorial alert
 function displayTutorial() {
