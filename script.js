@@ -117,21 +117,46 @@ function copyText() {
         });
 }
 
-// Function to download the text as a text file
-// function downloadText(){  
-//     //create a file and put the content, name and type
-//     var file = new File(["\ufeff" + textArea.value], 'text_file.txt', {type:"text/plain:charset=UTF-8"});
+function downloadFile(filename, content) {
+    // It works on all HTML5 Ready browsers as it uses the download attribute of the <a> element:
+    const element = document.createElement('a');
+    
+    //A blob is a data type that can store binary data
+    // "type" is a MIME type
+    // It can have a different value, based on a file you want to save
+    const blob = new Blob([content], { type: 'plain/text' });
   
-//     //create a ObjectURL in order to download the created file
-//     url = window.URL.createObjectURL(file);
+    //createObjectURL() static method creates a DOMString containing a URL representing the object given in the parameter.
+    const fileUrl = URL.createObjectURL(blob);
+    
+    //setAttribute() Sets the value of an attribute on the specified element.
+    element.setAttribute('href', fileUrl); //file location
+    element.setAttribute('download', filename); // file name
+    element.style.display = 'none';
+    
+    //use appendChild() method to move an element from one element to another
+    document.body.appendChild(element);
+    element.click();
+    
+    //The removeChild() method of the Node interface removes a child node from the DOM and returns the removed node
+    document.body.removeChild(element);
+  };
   
-//     //create a hidden link and set the href and click it
-//     var a = document.createElement("a");
-//     a.style = "display: none";
-//     a.href = url;
-//     a.download = file.name;
-//     a.click();
-//     window.URL.revokeObjectURL(url);
-//     document.body.removeChild(a);
-//   } 
+  window.onload = () => {
+    document.getElementById('download-button').
+    addEventListener('click', e => {
+      
+      //The value of the file name input box
+      const filename = document.getElementById('filename').value;
+      
+      //The value of what has been input in the textarea
+      const content = document.getElementById('text').value;
+      
+      // The && (logical AND) operator indicates whether both operands are true. If both operands have nonzero values, the result has the value 1 . Otherwise, the result has the value 0 .
+      
+      if (filename && content) {
+        downloadFile(filename, content);
+      }
+    });
+  };
 

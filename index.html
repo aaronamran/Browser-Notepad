@@ -13,13 +13,13 @@
     <button id="about-button">About</button>
     <button id="tutorial-button">Tutorial</button>
     <div class="editor">
-      <textarea id="text-area" rows="10" cols="50"></textarea>
+      <textarea placeholder="Insert your text here..." id="text-area" rows="10" cols="50"></textarea>
       <div class="toolbar">
         <button id="output-button">Output</button>
         <button id="clear-button">Clear</button>
         <button id="paste-button">Paste</button>
         <button id="copy-button">Copy</button>
-        <button id="download-button" onclick="downloadTextFile()">Download Text</button>
+        <button id="download-button">Download Text</button>
       </div>
     </div>
     <div id="output" class="output">
@@ -27,27 +27,27 @@
     </div>
     <script src="script.js" type="text/javascript">
 
-      const textArea = document.getElementById("text-area");
+    //   const textArea = document.getElementById("text-area");
       
-      function downloadTextFile(){
-              //create or obtain the file's content
-              var content = textArea.value;
+    //   function downloadTextFile(){
+    //           //create or obtain the file's content
+    //           var content = textArea.value;
 
-              //create a file and put the content, name and type
-              var file = new File(["\ufeff"+content], 'textFile.txt', {type: "text/plain:charset=UTF-8"});
+    //           //create a file and put the content, name and type
+    //           var file = new File(["\ufeff"+content], 'textFile.txt', {type: "text/plain:charset=UTF-8"});
 
-              //create a ObjectURL in order to download the created file
-              url = window.URL.createObjectURL(file);
+    //           //create a ObjectURL in order to download the created file
+    //           url = window.URL.createObjectURL(file);
 
-              //create a hidden link and set the href and click it
-              var a = document.createElement("a");
-              a.style = "display: none";
-              a.href = url;
-              a.download = file.name;
-              a.click();
-              window.URL.revokeObjectURL(url);
-              document.body.removeChild(a);
-            }
+    //           //create a hidden link and set the href and click it
+    //           var a = document.createElement("a");
+    //           a.style = "display: none";
+    //           a.href = url;
+    //           a.download = file.name;
+    //           a.click();
+    //           window.URL.revokeObjectURL(url);
+    //           document.body.removeChild(a);
+    //         }
     </script>
   </body>
 </html>
