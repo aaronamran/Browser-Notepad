@@ -8,7 +8,6 @@ const aboutButton = document.getElementById("about-button"); // About button
 const tutorialButton = document.getElementById("tutorial-button"); // Tutorial button
 const pasteButton = document.getElementById("paste-button"); // Paste button
 const copyButton = document.getElementById("copy-button"); // Copy button
-// const downloadTextButton = document.getElementById("download-text-button"); // New button
 
 let darkModeEnabled = false; // Variable to track the dark mode state
 let clipboardText = ""; // Variable to store copied text
@@ -21,7 +20,6 @@ outputButton.addEventListener("click", outputText);
 clearButton.addEventListener("click", clearText);
 pasteButton.addEventListener("click", pasteText); // Event listener for Paste button
 copyButton.addEventListener("click", copyText); // Event listener for Copy button
-// downloadTextButton.addEventListener("click", downloadText); // Event listener for download button
 
 // Function to display the about alert
 function displayAbout() {
@@ -120,6 +118,7 @@ function copyText() {
     });
 }
 
+// Function to download text as specified file
 function downloadFile(filename, content) {
   // It works on all HTML5 Ready browsers as it uses the download attribute of the <a> element:
   const element = document.createElement("a");
