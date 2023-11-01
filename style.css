@@ -6,6 +6,10 @@ body, .toolbar {
     background-color: white;
 }
 
+#filename {
+    width: 120%;
+}
+
 p {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
