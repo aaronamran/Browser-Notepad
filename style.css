@@ -17,6 +17,10 @@ body, .toolbar {
     margin-right: 18px;
 }
 
+#myname {
+    font-size: 75%;
+}
+
 /* Default style for text (black text on white background) */
 .editor {
     margin: 20px;
