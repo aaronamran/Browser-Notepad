@@ -39,7 +39,7 @@ function displayTutorial() {
     "Clear: Deletes all the text you've typed.\n\n" +
     "Paste: Pastes your most recently copied text from your clipboard.\n\n" +
     "Copy: Copies the entire text you've typed to your clipboard.\n\n" +
-    "Download Text as File: Downloads the text you've typed as a file using the specified file name and extension." ;
+    "Download Text as File: Downloads the text you've typed as a file using the specified file name and file extension." ;
   alert(message);
 }
 
