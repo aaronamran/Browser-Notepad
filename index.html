@@ -18,12 +18,36 @@
         <button id="clear-button">Clear</button>
         <button id="paste-button">Paste</button>
         <button id="copy-button">Copy</button>
-        <button id="download-button">Download</button>
+        <button id="download-button" onclick="downloadTextFile">
+          Download
+        </button>
       </div>
     </div>
     <div id="output" class="output">
       <!-- The edited text will be displayed here -->
     </div>
-    <script src="script.js"></script>
+    <script src="script.js">
+
+      const textArea = document.getElementById("text-area");
+      
+      function downloadTextFile(){
+              //create or obtain the file's content
+              var content = textArea.value;
+
+              //create a file and put the content, name and type
+              var file = new File(["\ufeff"+content], 'textFile.txt', {type: "text/plain:charset=UTF-8"});
+
+              //create a ObjectURL in order to download the created file
+              url = window.URL.createObjectURL(file);
+
+              //create a hidden link and set the href and click it
+              var a = document.createElement("a");
+              a.style = "display: none";
+              a.href = url;
+              a.download = file.name;
+              a.click();
+              window.URL.revokeObjectURL(url);
+            }
+    </script>
   </body>
 </html>

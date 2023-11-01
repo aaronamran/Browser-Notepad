@@ -123,12 +123,9 @@ function copyText() {
 }
 
 // Function to download the text as a text file
-function downloadText(){
-    //create or obtain the file's content
-    var content = textArea.value;
-  
+function downloadText(){  
     //create a file and put the content, name and type
-    var file = new File(["\ufeff"+content], 'myFile.txt', {type: "text/plain:charset=UTF-8"});
+    var file = new File(["\ufeff" + textArea.value], 'text_file.txt', {type:"text/plain:charset=UTF-8"});
   
     //create a ObjectURL in order to download the created file
     url = window.URL.createObjectURL(file);
@@ -140,6 +137,7 @@ function downloadText(){
     a.download = file.name;
     a.click();
     window.URL.revokeObjectURL(url);
+    document.body.removeChild(a);
   } 
 
 
