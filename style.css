@@ -77,9 +77,11 @@ body.dark-mode .container {
 /* Dark Mode Styles for Text Elements */
 body.dark-mode label,
 body.dark-mode h2,
-body.dark-mode p {
+body.dark-mode p,
+#text-area::placeholder {
     color: #fff; /* Change text color to white for labels, h1, and p elements */
 }
+
 body.dark-mode h2 {
     background-color: #111;
 }
