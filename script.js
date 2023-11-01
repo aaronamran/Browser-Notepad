@@ -10,10 +10,8 @@ const pasteButton = document.getElementById("paste-button"); // Paste button
 const copyButton = document.getElementById("copy-button"); // Copy button
 // const downloadTextButton = document.getElementById("download-text-button"); // New button
 
-
 let darkModeEnabled = false; // Variable to track the dark mode state
 let clipboardText = ""; // Variable to store copied text
-
 
 // Event listeners
 enableDarkMode.addEventListener("click", switchDarkMode);
@@ -24,10 +22,7 @@ clearButton.addEventListener("click", clearText);
 pasteButton.addEventListener("click", pasteText); // Event listener for Paste button
 copyButton.addEventListener("click", copyText); // Event listener for Copy button
 // downloadTextButton.addEventListener("click", downloadText); // Event listener for download button
-// downloadTextButton.addEventListener("click", function () {
-//     const text = textArea.value;
-//     downloadTextAsText("text_file.txt", text);
-// });
+
 
 // Function to display the about alert
 function displayAbout() {
@@ -140,20 +135,3 @@ function copyText() {
 //     document.body.removeChild(a);
 //   } 
 
-
-
-// Function to download the text as a text file
-// function downloadTextAsText() {
-//     const text = textArea.value;
-//     const blob = new Blob([text], { type: "text/plain" });
-//     const url = URL.createObjectURL(blob);
-
-//     const a = document.createElement("a");
-//     a.href = url;
-//     a.download = "text_file.txt";
-//     a.style.display = "none";
-//     document.body.appendChild(a);
-//     a.click();
-//     window.URL.revokeObjectURL(url);
-//     document.body.removeChild(a);
-// }
