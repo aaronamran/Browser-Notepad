@@ -14,6 +14,10 @@ p {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+#text-area::placeholder {
+    color: black;
+}
+
 .container {
     background-color: #fff;
     padding: 5px;
