@@ -131,7 +131,7 @@ function downloadFile(filename, content) {
     
     //setAttribute() Sets the value of an attribute on the specified element.
     element.setAttribute('href', fileUrl); //file location
-    element.setAttribute('download', filename); // file name
+    element.setAttribute('download-button', filename); // file name
     element.style.display = 'none';
     
     //use appendChild() method to move an element from one element to another
@@ -150,7 +150,7 @@ function downloadFile(filename, content) {
       const filename = document.getElementById('filename').value;
       
       //The value of what has been input in the textarea
-      const content = document.getElementById('text').value;
+      const content = document.getElementById('text-area').value;
       
       // The && (logical AND) operator indicates whether both operands are true. If both operands have nonzero values, the result has the value 1 . Otherwise, the result has the value 0 .
       
