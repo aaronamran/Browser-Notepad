@@ -46,6 +46,10 @@ textarea {
     cursor: pointer;
 }
 
+#download-button {
+    margin-left: 20px;
+}
+
 .output {
     margin: 20px;
     border: 1px solid #ccc;
