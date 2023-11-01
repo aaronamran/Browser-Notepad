@@ -16,13 +16,14 @@ let clipboardText = ""; // Variable to store copied text
 
 
 // Event listeners
+enableDarkMode.addEventListener("click", switchDarkMode);
 aboutButton.addEventListener("click", displayAbout);
 tutorialButton.addEventListener("click", displayTutorial); // Event listener for Tutorial button
 outputButton.addEventListener("click", outputText);
 clearButton.addEventListener("click", clearText);
 pasteButton.addEventListener("click", pasteText); // Event listener for Paste button
 copyButton.addEventListener("click", copyText); // Event listener for Copy button
-downloadTextButton.addEventListener("click", downloadTextAsText); // Event listener for download button
+downloadTextButton.addEventListener("click", downloadText); // Event listener for download button
 // downloadTextButton.addEventListener("click", function () {
 //     const text = textArea.value;
 //     downloadTextAsText("text_file.txt", text);
@@ -77,7 +78,7 @@ function clearText() {
 }
 
 // Event listener for toggling dark mode
-enableDarkMode.addEventListener('click', function () {
+function switchDarkMode() {
     if (darkModeEnabled) {
         // Disable dark mode
         document.body.classList.remove('dark-mode');
@@ -94,7 +95,7 @@ enableDarkMode.addEventListener('click', function () {
         textArea.style.color = "white"; // Change input text color to white
     }
     darkModeEnabled = !darkModeEnabled; // Toggle dark mode state
-});
+};
 
 // Function to paste text from the clipboard
 function pasteText() {
@@ -121,25 +122,25 @@ function copyText() {
         });
 }
 
-// // Function to download the text as a text file
-// function downloadTextAsText(){
-//     //create or obtain the file's content
-//     var content = textArea.value;
+// Function to download the text as a text file
+function downloadText(){
+    //create or obtain the file's content
+    var content = textArea.value;
   
-//     //create a file and put the content, name and type
-//     var file = new File(["\ufeff"+content], 'myFile.txt', {type: "text/plain:charset=UTF-8"});
+    //create a file and put the content, name and type
+    var file = new File(["\ufeff"+content], 'myFile.txt', {type: "text/plain:charset=UTF-8"});
   
-//     //create a ObjectURL in order to download the created file
-//     url = window.URL.createObjectURL(file);
+    //create a ObjectURL in order to download the created file
+    url = window.URL.createObjectURL(file);
   
-//     //create a hidden link and set the href and click it
-//     var a = document.createElement("a");
-//     a.style = "display: none";
-//     a.href = url;
-//     a.download = file.name;
-//     a.click();
-//     window.URL.revokeObjectURL(url);
-//   } 
+    //create a hidden link and set the href and click it
+    var a = document.createElement("a");
+    a.style = "display: none";
+    a.href = url;
+    a.download = file.name;
+    a.click();
+    window.URL.revokeObjectURL(url);
+  } 
 
 
 
