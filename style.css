@@ -33,11 +33,13 @@ textarea {
 .toolbar button {
     margin: 5px;
     padding: 5px 10px;
+    cursor: pointer;
 }
 
 #tutorial-button, #about-button {
     margin: 5px;
     padding: 5px 10px;
+    cursor: pointer;
 }
 
 .output {
@@ -74,6 +76,7 @@ body.dark-mode h2 {
     cursor: pointer;
     margin-top: 20px;
     margin-left: 20px;
+    cursor: pointer;
 }
 
 body.dark-mode #output,
