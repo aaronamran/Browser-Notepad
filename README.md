@@ -1,17 +1,12 @@
-# Personal Browser-based Text Editor
+# Personal Browser-based Text Editor (Version 2.0)
 
-This is a simple browser-based text editor created by Aaron Amran.
+This is a simple browser-based text editor by Aaron Amran.
 
 ## Features
 
-- Text editor with a dark mode option.
-- Accessible through "About" and "Tutorial" buttons.
-- Ability to input and edit text.
-- Output the edited text.
-- Clear the text area.
-- Paste text into the editor.
-- Copy text from the editor.
-- Download the text as a file.
+- 'Add New Note' button to add notes that are stored in local storage
+- Ability to input and edit text in text area.
+- 'Delete' button to delete selected note.
 
 ## Usage
 
@@ -24,24 +19,11 @@ Or follow these steps:
 1. Clone this repository to your local machine.
 2. Open the `index.html` file in your web browser.
 
-You can start using the text editor to input and edit text. The toolbar provides options to output, clear, paste, copy, and download the text.
-
-## Dark Mode
-
-This text editor includes an "Enable Dark Mode" button, which allows you to switch between light and dark modes for a different visual experience. Click the button to toggle dark mode on and off.
+You can start using the text editor to input and edit text.
 
 ## JavaScript Code
 
-The text editor uses JavaScript to handle various features, such as text input, editing, and tool actions. The provided JavaScript code (`script.js`) is responsible for these functionalities.
-
-- `displayAbout`: Displays an alert with information about the project.
-- `displayTutorial`: Displays an alert with a tutorial on using the buttons.
-- `outputText`: Saves and displays the input text.
-- `clearText`: Clears the text area.
-- `switchDarkMode`: Toggles dark mode on and off.
-- `pasteText`: Pastes text from the clipboard.
-- `copyText`: Copies text to the clipboard.
-- `downloadFile`: Function to download text as a specified file.
+The text editor uses JavaScript to handle various functions, such as creating and deleting notes. All created notes are stored in the local storage of the browser.
 
 ## Contributing
 

@@ -1,128 +1,121 @@
-body, .toolbar {
-    background-color: #c8c8c8;
+html,
+body {
+    height: 100%;
+    margin: 0;
 }
 
-#output {
-    background-color: white;
+.notes {
+    display: flex;
+    height: 100%;
+    background-color: #202232;
 }
 
-#filename {
-    width: 15%;
+.notes * {
+    font-family: sans-serif;
 }
 
-p {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+.notes__sidebar {
+    border-right: 2px solid #dddddd;
+    flex-shrink: 0;
+    overflow-y: auto;
+    padding: 1em;
+    width: 300px;
 }
 
-#text-area::placeholder {
-    color: black;
+.intro__text {
+    color: #edf2f4;
+    font-weight: bold;
 }
 
-.container {
-    background-color: #fff;
-    padding: 5px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    font-size: 150%;
-    margin-left: 20px;
-    margin-right: 18px;
-}
-
-#myname {
-    font-size: 60%;
-}
-
-/* Default style for text (black text on white background) */
-.editor {
-    margin: 20px;
-    background-color: white;
-    color: black;
-}
-
-textarea {
-    width: 98.6%;
-    padding: 10px;
-    resize: vertical;
-}
-
-.toolbar button {
-    margin: 5px;
-    padding: 5px 10px;
-    cursor: pointer;
-}
-
-#tutorial-button, #about-button {
-    margin: 5px;
-    padding: 5px 10px;
-    cursor: pointer;
-}
-
-#download-button {
-    margin-left: 20px;
-}
-
-.output {
-    margin: 20px;
-    border: 1px solid #ccc;
-    padding: 10px;
-}
-
-/* Dark Mode Styles */
-body.dark-mode {
-    background-color: #333;    
-}
-
-/* Container Styles for Dark Mode */
-body.dark-mode .container {
-    background-color: #111; 
-}
-
-/* Dark Mode Styles for Text Elements */
-body.dark-mode label,
-body.dark-mode h2,
-body.dark-mode p,
-body.dark-mode #text-area::placeholder {
-    color: #fff; /* Change text color to white for labels, h1, and p elements */
-}
-
-body.dark-mode h2 {
-    background-color: #111;
-}
-
-#enable-dark-mode {
-    background-color: gray;
-    color: #fff;
+.notes__add {
+    background: #2c6e49;
     border: none;
-    padding: 10px 15px;
+    border-radius: 7px;
+    color: #ffffff;
     cursor: pointer;
-    margin-top: 20px;
-    margin-left: 20px;
+    font-size: 1.25em;
+    font-weight: bold;
+    margin-bottom: 1em;
+    padding: 0.75em 0;
+    width: 100%;
+}
+
+.notes__add:hover {
+    background: #3a9260;
+}
+
+.notes__list-item {
+    background: #bdc6d1;
+    border-radius: 7px;
     cursor: pointer;
+    margin-bottom: 15px;
 }
 
-body.dark-mode #output,
-body.dark-mode #text-area {
-    background-color: dimgrey;
+.notes__list-item--selected {
+    background: #edf2f4;
+    border-radius: 7px;
+    font-weight: bold;
 }
 
-/* Dark mode style (white text on dark background) */
-body.dark-mode .editor,
-body.dark-mode .toolbar {
-    background-color: #333; /* You can choose your preferred dark background color */
-    color: white;
+.notes__small-title,
+.notes__small-updated {
+    padding: 10px;
 }
 
-/* Media query for screens smaller than 768px (typical for mobile devices) */
-@media (max-width: 768px) {
-    .container {
-        margin: 0;
-        padding: 10px;
-    }
-    .editor {
-        margin: 0;
-    }
-    #text-area {
-        width: 100%;
-    }
+.notes__small-title {
+    font-size: 1.2em;
+}
+
+.notes__small-body {
+    padding: 0 10px;
+}
+
+.notes__small-updated {
+    font-style: italic;
+    text-align: right;
+}
+
+.notes__preview {
+    background-color: #a5aebb;
+    display: flex;
+    flex-direction: column;
+    padding: 2em 3em;
+    flex-grow: 1;
+}
+
+.notes__title,
+.notes__body {
+    background-color: #202232;
+    color: #dddddd;
+    border-radius: 7px;
+    padding: 20px;
+    outline: none;
+    width: 97%;
+}
+
+.notes__title {
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.notes__body {
+    flex-grow: 1;
+    font-size: 1.2em;
+    line-height: 1.5;
+    margin-top: 1.5em;
+    resize: none;
+}
+
+.notes__delete {
+    background: #ef233c;
+    border: none;
+    border-radius: 7px;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 0.5em;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    width: 50%;
 }

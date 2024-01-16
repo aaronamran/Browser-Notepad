@@ -1,39 +1,30 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-  </head>
-  <body>
-    <div class="container">
-      <p>Personal Browser-based Text Editor</p>
-      <p id="myname">A project by Aaron A.</p>
-    </div>
-
-    <button id="enable-dark-mode">Enable Dark Mode</button>
-    <button id="about-button">About</button>
-    <button id="tutorial-button">Tutorial</button>
-    <div class="editor">
-      <textarea
-        placeholder="Insert your text here..."
-        id="text-area"
-        rows="10"
-        cols="50"
-      ></textarea>
-      <div class="toolbar">
-        <button id="output-button">Output</button>
-        <button id="clear-button">Clear</button>
-        <button id="paste-button">Paste</button>
-        <button id="copy-button">Copy</button>
-        <button id="download-button">Download Text as File</button>
-        <input
-          id="filename"
-          placeholder="Insert file name with file extension..."
-        />
-      </div>
-    </div>
-    <div id="output" class="output">
-      <!-- The edited text will be displayed here -->
-    </div>
-    <script src="script.js" type="text/javascript"></script>
-  </body>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Notes App</title>
+		<link rel="stylesheet" href="./style.css" />
+	</head>
+	<body>
+		<div class="notes" id="app">
+        <!-- 			
+            <div class="notes__sidebar">
+            <button class="notes__add" type="button">Add New Note</button>
+            <div class="notes__list">
+                <div class="notes__list-item notes__list-item--selected">
+                    <div class="notes__small-title">Coding Notes</div>
+                    <div class="notes__small-body">I learnt a lot today.</div>
+                    <div class="notes__small-updated">Thursday 3:30pm</div>
+                </div>
+            </div>
+        </div>
+        <div class="notes__preview">
+            <input class="notes__title" type="text" placeholder="Notes title...">
+            <textarea class="notes__body">Notes content...</textarea>
+        </div> -->
+		</div>
+		<script src="./script/main.js" type="module"></script>
+	</body>
 </html>
